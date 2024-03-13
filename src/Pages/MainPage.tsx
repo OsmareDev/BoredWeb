@@ -1,9 +1,11 @@
+import { useState } from "react";
 import ActivityCard from "../Components/ActivityCard";
 import Filters from "../Components/Filters";
+import SavedActivities from "../Components/SavedActivities";
 import useActivity from "../Hooks/useActivity";
 
 export default function MainPage() {
-  const { activity, getActivity } = useActivity({
+  const { activity, getActivity, loading } = useActivity({
     activity: "Loading Activity",
     accessibility: 0,
     key: "",
@@ -13,8 +15,10 @@ export default function MainPage() {
     type: ""
   })
 
+
   return <>
     <Filters newActivity={getActivity}/>
-    <ActivityCard activity={activity}/>
+    <ActivityCard activity={activity} loading={loading}/>
+    <SavedActivities activityTest={activity}/>
   </>
 }

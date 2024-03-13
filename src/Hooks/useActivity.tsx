@@ -12,15 +12,18 @@ export default function useActivity( initialState : ActivityType ) {
   }
 
   const [activity, SetActivity] = useState<ActivityType>(initialState)
+  const [loading, SetLoading] = useState(false)
 
   const getActivity = async ( filters : FilterType ) => {
+    SetLoading(true)
     const newActivity = await GetActivity(filters)
     SetActivity(newActivity)
+    SetLoading(false)
   }
 
   useEffect(() => {
     getActivity(filters)
   }, [])
   
-  return {activity, getActivity}
+  return {activity, getActivity, loading}
 }
