@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ActivityCard from "../Components/ActivityCard";
 import Filters from "../Components/Filters";
 import SavedActivities from "../Components/SavedActivities";

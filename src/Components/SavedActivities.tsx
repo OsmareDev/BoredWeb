@@ -1,8 +1,6 @@
 import { useState } from "react"
 import { bars, xMark } from "../assets/svgs/sideBar"
 import SavedActivityCard from "./SavedActivityCard"
-import LoginCard from "./LoginCard"
-import SignInCard from "./SignInCard"
 import AplicationEnterCards from "./AplicationEnterCards"
 
 interface PropTypes {
